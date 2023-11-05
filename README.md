@@ -1,9 +1,8 @@
 # Mobile-app
 
-Aplikacja, która ma pomóc osobom, które chcą się pozbyć zużytych fotowoltanów.
+Aplikacja, która ma uświadomoć ludzi, że jest wiele sposobów na zarabianie online i ułatwić im zgłoszenie się.
 
-1 Informacje ogólne o fotowoltanach, dlaczego tak ważne jest ich zdjęcie po upływie czasu.
-2 Ekran lista gmin, które mają taką usługe.
-3 Ekran lista gmin, które poszukują firm z tą usługą.
-4 Możliwość zgłoszenia swojej firmy recyklinogowej jako specjaliści zdejmujący i zabierający panele.
-5 Ekran możliwość zgłoszenia się w kolejke oczekujących na zabranie.
+1 Informacje ogólne o problemie presji rówieśnika oraz pracah sezonowych przez, które dorośli tracą zdrowie fizyczne jak i psychiczne.
+2 Lista sposobów: zarabianie poprzez ankiety, e-booki, uczenie AI, pisanie recenzji, playlisty.
+3 Opisany głębiej jeden sposób instrukcje jak to zrobić + link do wywiadu z osobą która robi to na codzień.
+4 Przekierowanie do strony na której jest możliwość zgłoszenia się.
