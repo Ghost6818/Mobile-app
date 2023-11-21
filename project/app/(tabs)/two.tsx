@@ -1,31 +1,40 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import { Text, View } from "../../components/Themed";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function TabTwoScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
-    </View>
+    <ScrollView style={styles.container}>
+      <View
+        style={styles.infoContainer}
+        lightColor="#eee"
+        darkColor="rgba(255,255,255,0.1)"
+      >
+        <Text>Kategoria</Text>
+      </View>
+      <View
+        style={styles.infoContainer}
+        lightColor="#eee"
+        darkColor="rgba(255,255,255,0.1)"
+      >
+        <Text>Kategoria</Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    backgroundColor: "white",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
+  infoContainer: {
     marginVertical: 30,
-    height: 1,
-    width: '80%',
+    height: 160,
+    borderRadius: 15,
+    width: "80%",
+    backgroundColor: "green",
   },
 });

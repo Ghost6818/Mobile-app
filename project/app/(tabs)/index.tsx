@@ -1,14 +1,18 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import EditScreenInfo from "../../components/EditScreenInfo";
+import { Text, View } from "../../components/Themed";
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <View style={styles.infoContainer}>
+        <Text style={styles.title}>Jak się zaczeło?</Text>
+        <Text style={styles.text}>
+          Dzięki tej stronie dowiesz się jak zarabiać pieniądze przez słuchanie
+          muyzyki.
+        </Text>
+      </View>
     </View>
   );
 }
@@ -16,16 +20,20 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    backgroundColor: "white",
+  },
+  infoContainer: {
+    alignItems: "center",
+    marginVertical: 30,
+    backgroundColor: "green",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  text: {
+    fontSize: 15,
+    textAlign: "center",
   },
 });
