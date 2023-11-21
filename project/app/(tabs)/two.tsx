@@ -13,6 +13,7 @@ export default function TabTwoScreen() {
       >
         <Text>Kategoria</Text>
       </View>
+
       <View
         style={styles.infoContainer}
         lightColor="#eee"

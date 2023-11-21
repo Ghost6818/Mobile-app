@@ -7,11 +7,7 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
-        <Text style={styles.title}>Jak się zaczeło?</Text>
-        <Text style={styles.text}>
-          Dzięki tej stronie dowiesz się jak zarabiać pieniądze przez słuchanie
-          muyzyki.
-        </Text>
+        <Text style={styles.title}>Szczegóły</Text>
       </View>
     </View>
   );
