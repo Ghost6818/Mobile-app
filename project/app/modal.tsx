@@ -1,18 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from "react-native";
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import { Text, View } from "../components/Themed";
 
 export default function ModalScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/modal.tsx" />
-
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+      <View style={styles.infoContainer}>
+        <Text style={styles.title}>Jak się zaczeło?</Text>
+        <Text style={styles.text}>
+          {" "}
+          Nasz projekt zaczą się od wywiadów z osobami, które mają doświadczenie
+          z zarabianiem online. Postalowiliśmy sprawdzić czy ludzie są
+          zainteresowani tematem. Aplikacja ma pomóc w wyszukaniu firm oraz
+          stron sprawdzonych przez nas.
+        </Text>
+      </View>
     </View>
   );
 }
@@ -20,16 +22,20 @@ export default function ModalScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    backgroundColor: "white",
+  },
+  infoContainer: {
+    alignItems: "center",
+    marginVertical: 30,
+    backgroundColor: "green",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  text: {
+    fontSize: 15,
+    textAlign: "center",
   },
 });
