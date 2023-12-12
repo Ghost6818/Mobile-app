@@ -1,8 +1,17 @@
 import { Platform, StyleSheet } from "react-native";
-
+import { useEffect, useState } from "react";
 import { Text, View } from "../components/Themed";
+import { PeopleAlsoAsk, getPeopleAlsoAsk } from "../db";
 
 export default function ModalScreen() {
+  const [status, setStatus] = useState("");
+  const [peopleAlsoAsk, setPeopleAlsoAsk] = useState<PeopleAlsoAsk[]>([]);
+
+  useEffect(() => {
+    getPeopleAlsoAsk().then((res) => {
+      setPeopleAlsoAsk(res);
+    });
+  }, [status, peopleAlsoAsk]);
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>

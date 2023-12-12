@@ -2,8 +2,19 @@ import { StyleSheet } from "react-native";
 import { Image } from "expo-image";
 import { Text, View } from "../../components/Themed";
 import { ScrollView } from "react-native-gesture-handler";
+import { useEffect, useState } from "react";
+import { Category, getCategoryById } from "../../db";
 
 export default function TabTwoScreen() {
+  const [status, setStatus] = useState("");
+  const [category, setCategory] = useState<Category | undefined>();
+
+  useEffect(() => {
+    getCategoryById(2).then((res) => {
+      setCategory(res);
+    });
+  }, [status, category]);
+
   return (
     <ScrollView>
       <View style={styles.container}>
