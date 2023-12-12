@@ -1,4 +1,6 @@
-const db = {
+import { UrlObject } from "expo-router/build/LocationProvider";
+
+const db: Db = {
   organic: [
     {
       title: "29 sposobów na zarobienie dodatkowych pieniędzy - GeekWork",
@@ -28,12 +30,6 @@ const db = {
       link: "https://youtube.com/watch?v=UvCjxw0ESR4",
       snippet: "... oczywiste sposoby zarabiania 4:13 Programy ...",
       date: "8 wrz 2020",
-      attributes: {
-        "Czas trwania": "9:54",
-        Opublikowano: "8 wrz 2020",
-      },
-      imageUrl:
-        "https://i.ytimg.com/vi/UvCjxw0ESR4/default.jpg?sqp=-oaymwEECHgQQw&rs=AMzJL3m4LcKkQmeF9ipaP9cZrGBh8zq02A",
       position: 4,
     },
     {
@@ -117,30 +113,97 @@ const db = {
       link: "https://grupaprogres.pl/samorozwoj-jakie-umiejetnosci-warto-zdobyc-by-zarabiac-wiecej/",
     },
   ],
-  relatedSearches: [
+  Category: [
     {
-      query: "Strony do zarabiania pieniędzy",
+      index: 1,
+      logo: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      name: "Zarabianie",
+      query: "Podróże",
     },
     {
-      query: "Jak zarabiać w wolnym czasie",
+      index: 2,
+      logo: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      name: "Zarabianie",
+      query: "Gry",
     },
     {
-      query: "Jak zarobić 5 tys w tydzień",
+      index: 3,
+      logo: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      name: "Zarabianie",
+      query: "AI",
     },
     {
-      query: "Jak zarabiać więcej",
+      index: 1,
+      logo: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      name: "Zarabianie",
+      query: "Rezenzje",
     },
     {
-      query: "Na czym zarabia się duże pieniądze",
+      index: 1,
+      logo: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      name: "Zarabianie",
+      query: "Plylisty",
     },
     {
-      query: "Jak zarobić pieniądze w godzinę",
+      index: 1,
+      logo: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      name: "Zarabianie",
+      query: "Recenzje",
     },
     {
-      query: "Jak zarabiać w wieku 12 lat",
-    },
-    {
-      query: "Jak się wzbogacić nie mając nic",
+      index: 1,
+      logo: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+      name: "TestApp",
+      query: "Testowanie aplikacji",
     },
   ],
 };
+
+type Db = {
+  organic: Organic[];
+  peopleAlsoAsk: PeopleAlsoAsk[];
+  Category: Category[];
+};
+
+export type Organic = {
+  title: string;
+  link: string;
+  snippet: string;
+  date?: string;
+  position: number;
+};
+
+export type PeopleAlsoAsk = {
+  question: string;
+  snippet: string;
+  title: string;
+  link: string;
+};
+
+export type Category = {
+  index: number;
+  logo: string;
+  name: string;
+  query: string;
+};
+
+export function getCategoryById(id: number) {
+  const response = db.Category.find((element) => element.index === id);
+  return Promise.resolve(response);
+}
+
+export function getCategory() {
+  return Promise.resolve(db.Category);
+}
+
+export function getOrganic() {
+  return Promise.resolve(db.organic);
+}
+
+export function getPeopleAlsoAsk() {
+  return Promise.resolve(db.peopleAlsoAsk);
+}
+
+getCategoryById(1).then((dane) => {
+  console.log(dane);
+});
