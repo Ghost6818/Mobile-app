@@ -1,10 +1,20 @@
 import { StyleSheet } from "react-native";
-
+import { useEffect, useState } from "react";
 import EditScreenInfo from "../../components/EditScreenInfo";
 import { Text, View } from "../../components/Themed";
 import { Image } from "expo-image";
+import { Organic, getOrganic } from "../../db";
 
 export default function TabOneScreen() {
+  const [status, setStatus] = useState("");
+  const [organic, setOrganic] = useState<Organic[]>([]);
+
+  useEffect(() => {
+    getOrganic().then((res) => {
+      setOrganic(res);
+    });
+  }, [status, organic]);
+
   return (
     <View style={styles.container}>
       <Image
