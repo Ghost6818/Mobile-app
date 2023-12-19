@@ -4,7 +4,7 @@ const db: Db = {
   organic: [
     {
       title: "29 sposobów na zarobienie dodatkowych pieniędzy - GeekWork",
-      link: "https://geekwork.pl/29-sposobow-na-zarobienie-dodatkowych-pieniedzy/",
+      link: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
       snippet:
         "„Być może dzisiaj nie masz długów, dobrze zarabiasz i myślisz sobie, że nie potrzebujesz oszczędności, ale zastanów się, bo być może od zaciągania kredytów ...",
       position: 1,
@@ -84,6 +84,7 @@ const db: Db = {
   ],
   peopleAlsoAsk: [
     {
+      index: 1,
       question: "Jak zarobić 1000 zł w jeden dzień?",
       snippet:
         "Żeby zarobić 1000 złotych w jeden dzień, najlepszą opcją jest inwestycja w akcje, opcje, kontrakty terminowe, ETF-y lub waluty. Jednak należy wziąć pod uwagę, że wymaga to wiedzy i odpowiedniej analizy rynku.",
@@ -91,6 +92,7 @@ const db: Db = {
       link: "https://bif24.pl/pomysly-na-biznes/jak-zarobic-szybko-pieniadze/",
     },
     {
+      index: 2,
       question: "Jak zarobić 100zł w jeden dzień?",
       snippet:
         "JAK ZAROBIĆ 100 ZŁ DZIENNIE PRZEZ INTERNET?\n1\nFreelancing. Freelancing to popularny sposób na zarabianie pieniędzy przez internet, wykonując zlecenia dla klientów. ...\n2\nSprzedawaj przedmioty online. ...\n3\nCopywriting. ...\n4\nWypełniaj ankiety online. ...\n5\nStwórz własnego bloga. ...\n6\nUdzielaj lekcji online. ...\n7\nKryptowaluty.",
@@ -98,6 +100,7 @@ const db: Db = {
       link: "https://klubprzedsiebiorczychmam.pl/jak-zarobic-100-zl-dziennie-przez-internet/",
     },
     {
+      index: 3,
       question: "Na czym najłatwiej zarobić pieniądze?",
       snippet:
         "OTO KILKA PROPOZYCJI:\n1\ncopywriting, redakcja, korekta i tłumaczenie tekstów.\n2\nprowadzenie podcastów, kanałów na YouTube i w social mediach.\n3\nmontaż i edycja filmów.\n4\nprzepisywanie tekstów książek i nagrań\n5\nsprzedawanie przez internet.\n6\nwypełnianie płatnych ankiet online.\n7\nprogramy partnerskie.\n8\nprowadzenie bloga.",
@@ -105,6 +108,7 @@ const db: Db = {
       link: "https://www.livecareer.pl/porady-zawodowe/jak-zarobic-pieniadze",
     },
     {
+      index: 4,
       question: "Czego warto się uczyć aby dobrze zarabiać?",
       snippet:
         "Czego warto się uczyć, by dobrze zarabiać? Jedną z najważniejszych umiejętności, która wpływa na zarobki, są zdolności komunikacyjne. Bez względu na to, czy pracujesz w obszarze sprzedaży, marketingu czy zarządzania, umiejętność skutecznej komunikacji jest kluczowa.",
@@ -174,6 +178,7 @@ export type Organic = {
 };
 
 export type PeopleAlsoAsk = {
+  index: number;
   question: string;
   snippet: string;
   title: string;
