@@ -25,7 +25,7 @@ export default function TabOneScreen() {
       />
       <View>
         <Text>Instrukcja</Text>
-        <Text>1. Wejdź na naszą stronę.</Text>
+        <Text>1. social media</Text>
         <Text>2. Wybierz kategorię.</Text>
         <Text>2. Wyślij swoją pierwszą recenzje po przeczytaniu książki.</Text>
       </View>
