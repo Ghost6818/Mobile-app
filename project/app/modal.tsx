@@ -2,6 +2,7 @@ import { Platform, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
 import { Text, View } from "../components/Themed";
 import { PeopleAlsoAsk, getPeopleAlsoAsk } from "../db";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function ModalScreen() {
   const [status, setStatus] = useState("");
@@ -13,18 +14,29 @@ export default function ModalScreen() {
     });
   }, [status, peopleAlsoAsk]);
   return (
-    <View style={styles.container}>
-      <View style={styles.infoContainer}>
+    <ScrollView>
+      <View style={styles.container}>
         <Text style={styles.title}>Jak się zaczeło?</Text>
         <Text style={styles.text}>
-          {" "}
           Nasz projekt zaczą się od wywiadów z osobami, które mają doświadczenie
           z zarabianiem online. Postalowiliśmy sprawdzić czy ludzie są
           zainteresowani tematem. Aplikacja ma pomóc w wyszukaniu firm oraz
           stron sprawdzonych przez nas.
         </Text>
+        {peopleAlsoAsk?.map((ask) => {
+          return (
+            <View style={styles.container} key={ask.index}>
+              <View style={{ flexGrow: 1 }}></View>
+              <View style={{ flexGrow: 1 }}>
+                <Text style={styles.title}>{ask.title}</Text>
+                <Text style={styles.title}>{ask.question}</Text>
+                <Text style={styles.title}>{ask.snippet}</Text>
+              </View>
+            </View>
+          );
+        })}
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -33,11 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: "white",
-  },
-  infoContainer: {
-    alignItems: "center",
     marginVertical: 30,
-    backgroundColor: "green",
   },
   title: {
     fontSize: 20,

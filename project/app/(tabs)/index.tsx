@@ -4,6 +4,7 @@ import EditScreenInfo from "../../components/EditScreenInfo";
 import { Text, View } from "../../components/Themed";
 import { Image } from "expo-image";
 import { Organic, getOrganic } from "../../db";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function TabOneScreen() {
   const [status, setStatus] = useState("");
@@ -16,20 +17,27 @@ export default function TabOneScreen() {
   }, [status, organic]);
 
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source="https://i.ytimg.com/vi/JSPiRQp0GGo/maxresdefault.jpg"
-        contentFit="scale-down"
-        transition={1000}
-      />
-      <View>
-        <Text>Instrukcja</Text>
-        <Text>1. social media</Text>
-        <Text>2. Wybierz kategorię.</Text>
-        <Text>2. Wyślij swoją pierwszą recenzje po przeczytaniu książki.</Text>
+    <ScrollView>
+      <View style={styles.container}>
+        {organic?.map((org) => {
+          return (
+            <View style={styles.container} key={org.position}>
+              <Image
+                style={styles.image}
+                source={org.link}
+                contentFit="scale-down"
+                transition={1000}
+              />
+              <View>
+                <Text>{org.title}</Text>
+                <Text>{org.snippet}</Text>
+                <Text>{org?.date}</Text>
+              </View>
+            </View>
+          );
+        })}
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -37,16 +45,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-  },
-  infoContainer: {
-    alignItems: "center",
     marginVertical: 30,
-    backgroundColor: "green",
   },
   image: {
     flex: 1,
     width: "100%",
-    backgroundColor: "#0553",
     margin: 0,
   },
 });
