@@ -21,7 +21,7 @@ export default function TabTwoScreen() {
         {category?.map((categ) => {
           return (
             <View style={styles.infoContainer} key={categ.index}>
-              <View style={{ flexGrow: 1 }}>
+              <View style={{ flexGrow: 1, width: "50%" }}>
                 <Image
                   style={styles.image}
                   source={categ.logo}
@@ -29,9 +29,9 @@ export default function TabTwoScreen() {
                   transition={1000}
                 />
               </View>
-              <View style={{ flexGrow: 1 }}>
+              <View style={{ flexGrow: 1, width: "50%" }}>
                 <Text style={styles.title}>{categ.name}</Text>
-                <Text style={styles.title}>{categ.query}</Text>
+                <Text style={styles.text}>{categ.query}</Text>
               </View>
             </View>
           );
@@ -48,20 +48,23 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   title: {
-    paddingLeft: 10,
+    margin: 10,
+  },
+  text: {
+    fontSize: 15,
+    margin: 10,
+    lineHeight: 25,
   },
   image: {
     flex: 1,
-    width: "100%",
-    backgroundColor: "green",
     margin: 0,
-    borderRadius: 500,
   },
   infoContainer: {
     flexDirection: "row",
-    marginVertical: 30,
+    marginVertical: 20,
     height: 160,
     borderRadius: 15,
+    overflow: "hidden",
     width: "80%",
   },
 });
