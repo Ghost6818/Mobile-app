@@ -1,37 +1,34 @@
 import { StyleSheet } from "react-native";
-import { Image } from "expo-image";
-import { Text, View } from "../../components/Themed";
-import { ScrollView } from "react-native-gesture-handler";
 import { useEffect, useState } from "react";
-import { Category, getCategory } from "../../db";
+import EditScreenInfo from "../../components/EditScreenInfo";
+import { Text, View } from "../../components/Themed";
+import { Image } from "expo-image";
+import { Organic, getOrganic } from "../../db";
+import { ScrollView } from "react-native-gesture-handler";
 
-export default function TabTwoScreen() {
+export default function TabOneScreen() {
   const [status, setStatus] = useState("");
-  const [category, setCategory] = useState<Category[] | undefined>();
+  const [organic, setOrganic] = useState<Organic[]>([]);
 
   useEffect(() => {
-    getCategory().then((res) => {
-      setCategory(res);
+    getOrganic().then((res) => {
+      setOrganic(res);
     });
-  }, [status, category]);
+  }, [status, organic]);
 
   return (
     <ScrollView>
       <View style={styles.container}>
-        {category?.map((categ) => {
+        {organic?.map((org) => {
           return (
-            <View style={styles.infoContainer} key={categ.index}>
-              <View style={{ flexGrow: 1, width: "50%" }}>
-                <Image
-                  style={styles.image}
-                  source={categ.logo}
-                  contentFit="scale-down"
-                  transition={1000}
-                />
-              </View>
-              <View style={{ flexGrow: 1, width: "50%" }}>
-                <Text style={styles.title}>{categ.name}</Text>
-                <Text style={styles.text}>{categ.query}</Text>
+            <View style={styles.container} key={org.position}>
+              <View style={styles.box}>
+                <Text style={styles.title}>{org.title}</Text>
+                <Text style={styles.text}>{org.snippet}</Text>
+                <Text style={{ color: "#018BD8", padding: 15 }}>
+                  {org.link}
+                </Text>
+                <Text style={styles.text}>{org?.date}</Text>
               </View>
             </View>
           );
@@ -45,26 +42,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "white",
+    marginVertical: 20,
+    backgroundColor: "#D0FFD8",
+    borderRadius: 15,
+    overflow: "hidden",
+    marginHorizontal: 20,
+  },
+  box: {
+    backgroundColor: "black",
+  },
+  image: {
+    flex: 1,
+    width: "100%",
+    margin: 0,
   },
   title: {
     margin: 10,
+    fontSize: 18,
+    color: "#3F904D",
   },
   text: {
     fontSize: 15,
     margin: 10,
     lineHeight: 25,
-  },
-  image: {
-    flex: 1,
-    margin: 0,
-  },
-  infoContainer: {
-    flexDirection: "row",
-    marginVertical: 20,
-    height: 160,
-    borderRadius: 15,
-    overflow: "hidden",
-    width: "80%",
+    padding: 5,
   },
 });

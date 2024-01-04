@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     padding: 10,
-    backgroundColor: "#287B51",
+    backgroundColor: "black",
     marginVertical: 20,
   },
   box: {
     flexGrow: 1,
-    backgroundColor: "black",
+    backgroundColor: "#3F904D",
     padding: 10,
     borderRadius: 10,
   },
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   text: {
-    fontSize: 15,
+    fontSize: 14.5,
     textAlign: "center",
     margin: 10,
     lineHeight: 25,
