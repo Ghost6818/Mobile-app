@@ -26,11 +26,9 @@ export default function ModalScreen() {
         {peopleAlsoAsk?.map((ask) => {
           return (
             <View style={styles.container} key={ask.index}>
-              <View style={{ flexGrow: 1 }}></View>
-              <View style={{ flexGrow: 1 }}>
+              <View style={styles.box}>
                 <Text style={styles.title}>{ask.title}</Text>
-                <Text style={styles.title}>{ask.question}</Text>
-                <Text style={styles.title}>{ask.snippet}</Text>
+                <Text style={styles.text}>{ask.snippet}</Text>
               </View>
             </View>
           );
@@ -44,15 +42,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "white",
-    marginVertical: 30,
+    padding: 10,
+    backgroundColor: "black",
+    marginVertical: 20,
+  },
+  box: {
+    flexGrow: 1,
+    backgroundColor: "#3F904D",
+    padding: 10,
+    borderRadius: 10,
   },
   title: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 18,
+    margin: 10,
+    textAlign: "center",
   },
   text: {
-    fontSize: 15,
+    fontSize: 14.5,
     textAlign: "center",
+    margin: 10,
+    lineHeight: 25,
   },
 });
