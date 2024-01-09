@@ -16,4 +16,4 @@ Dokumentacja:
 5. Uruchamiamy projekt: npx expo start --tunnel
 6. Jeśli nie mamy zainstalowanej aplikacji Expo Go na telefonie, to pobieramy ją z Google Play lub App Store.
 7. Zanim zeskanujemy kod powiniśmy upewnić się, że telefon i komputer są w tej samej sieci.
-8. Skanujemy kod QR i aplikacja powinna się uruchomić.
+8. Skanujemy kod QR i aplikacja powinna się uruchomić. pamientaj żeby telefon i laptop były podłączone do tej samej sieci.

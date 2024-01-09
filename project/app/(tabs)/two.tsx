@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     marginVertical: 20,
-    backgroundColor: "#D0FFD8",
+    backgroundColor: "white",
     borderRadius: 15,
     overflow: "hidden",
     marginHorizontal: 20,
